@@ -259,7 +259,9 @@ if (typeof Slick === "undefined") {
             $focusSink = $("<div tabIndex='0' hideFocus style='position:fixed;width:0;height:0;top:0;left:0;outline:0;'></div>").appendTo($container);
 
             $headerScroller = $("<div class='slick-header ui-state-default' style='overflow:hidden;position:relative;' />").appendTo($container);
-            $headers = $("<div class='slick-header-columns' style='left:-1000px' />").appendTo($headerScroller);
+            $headers = $("<div class='slick-header-columns' />");
+            $headers.css(rear, (-1000 - getRearOffset()) + 'px');
+            $headers.appendTo($headerScroller);
             $headers.width(getHeadersWidth());
 
             $headerRowScroller = $("<div class='slick-headerrow ui-state-default' style='overflow:hidden;position:relative;' />").appendTo($container);
